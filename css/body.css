@@ -19,6 +19,7 @@
 
     --section-block-list-button-bg-color: hsla(0, 0%, 100%, 1);
     --section-block-list-button-border: 1px solid hsla(0, 0%, 74%, 1);
+    --section-block-list-button-padding: 10px;
 
     /* The contents inside the section blocks of the list item */
     --section-block-h4-color: hsla(0, 0%, 73%, 1);
@@ -38,6 +39,7 @@
     /* --section-3-block-list-2-bg-color: hsla(162, 100%, 99%, 1); */
 
     --footer-block-bg-color: hsla(0, 0%, 100%, 1);
+    --footer-text-font-size: .9rem;
 
     --black: hsl(0, 0%, 0%, 1);
 
@@ -48,8 +50,7 @@
     /* section's margin, and padding and other utility classes that are general. */
     --sections-padding: 5rem;
     --inner-sections-padding: 2rem 10rem;
-    /* EACH SECTION'S ORDERED LISTS COMPONENTS AND CONTENT STYLES
-    -- */
+    /* EACH SECTION'S ORDERED LISTS COMPONENTS AND CONTENT STYLES */
 }
 
 /* THIS IS FOR THE BODY */
@@ -71,6 +72,7 @@ h6 {
 }
 
 /* FROM THE HEADER TO THE FOOTER BLOCK */
+/* THE HEADER, NAV AND HERO SECTION */
 .header {
     padding: var(--hero-section-inner-content-padding);
     background: var(--header-background);
@@ -95,6 +97,7 @@ h6 {
     font-size: .9em;
 }
 
+/* THE HERO SECTION */
 .hero {
     font-size: 1.5rem;
 }
@@ -205,7 +208,7 @@ h6 {
 }
 
 /* second-header text of the inner-section block inside list item's section */
-.section__block__list__item__section-block__grid-layout--left__block h4 {
+:is(.section__block__list__item__section-block__grid-layout--left__block, .section__block__list__item__section-block__grid-layout--right__block) h4 {
     color: var(--section-block-h4-color);
     font-size: .8rem;
     font-weight: 400;
@@ -215,13 +218,16 @@ h6 {
 .section__block__list__item__section-block__grid-layout--left__block a {
     text-decoration: underline;
     /* margin-top: 1.5rem; */
+    margin: 0;
     font-size: .8rem;
 }
 
 /* button inside list item's section. */
-:is(.section__block__list__item__section-block__grid-layout--left__block, .section__block__list__item__section-block__grid-layout--right__block) button {
+.section__block__list__item__section-block__grid-layout--left button {
     background: white;
     border: var(--section-block-list-button-border);
+    padding: var(--section-block-list-button-padding);
+    cursor: pointer;
 }
 
 /* INDIVIDUAL STYLES PERTAINING TO THE SPECIFIC BLOCK ELEMENTS AND THEIR CONTENTS */
@@ -258,6 +264,8 @@ h6 {
     background-color: var(--section-3-block-list-3-bg-color);
 }
 
+/* END OF SECTION BLOCK */
+
 /* THE FOOTER AND THE FOOTER TEXT */
 .footer {
     text-align: center;
@@ -267,6 +275,7 @@ h6 {
 
 .footer__text {
     color: var(--black);
+    font-size: var(--footer-text-font-size);
 }
 
 /* FOR MOBILE VIEW (optional) */
@@ -277,6 +286,7 @@ h6 {
     }
 }
 
+/* BREAKPOINT FOR MOBILE TO TABLET SCREEN */
 @media (max-width: 650px) {
     .hero__grid {
         display: flex;
