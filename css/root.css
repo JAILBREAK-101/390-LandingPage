@@ -26,3 +26,11 @@ body {
     min-height: 100%;
     background-color: var(--container-bg-color);
 }
+
+/* FOR MOBILE VIEW (optional) */
+@media (max-width: 450px) {
+    /* .header__nav-menu { */
+        /* flex-direction: column; */
+        /* gap: 5rem; */
+    /* } */
+}
